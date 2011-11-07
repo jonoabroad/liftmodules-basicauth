@@ -29,7 +29,6 @@ If you want all run modes to have authentication put them in default.props
 
          
          liftmodules.basic.title=Protected Site
-         liftmodules.basic.role=Role
          liftmodules.basic.username=hello
          liftmodules.basic.password=hello
 

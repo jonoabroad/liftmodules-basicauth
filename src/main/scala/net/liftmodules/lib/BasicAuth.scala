@@ -33,7 +33,7 @@ package lib {
     def setAuth = {
       logger.debug("Basic Authentication enabled for %s".format(Props.mode))
       val title = Props.get("liftmodules.basic.title").openOr("")
-      val role = Props.get("liftmodules.basic.role").openOr("")
+      val role =  Props.get("liftmodules.basic.role").openOr("liftmodules.basic.role")
       val username = Props.get("liftmodules.basic.username").openOr("")
       val password = Props.get("liftmodules.basic.password").openOr("")
 
