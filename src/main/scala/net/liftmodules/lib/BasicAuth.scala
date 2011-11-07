@@ -26,23 +26,25 @@ package lib {
   object BasicAuth extends Loggable {
 
     def init = Props.get("liftmodules.basic.username") match {
-      case Full(_)   ⇒ setAuth
+      case Full(_) ⇒ setAuth
       case otherwise ⇒ logger.debug("Basic Authentication disabled for %s".format(Props.mode))
     }
 
     def setAuth = {
       logger.debug("Basic Authentication enabled for %s".format(Props.mode))
       val title = Props.get("liftmodules.basic.title").openOr("")
-      val role =  Props.get("liftmodules.basic.role").openOr("liftmodules.basic.role")
+      val role = Props.get("liftmodules.basic.role").openOr("liftmodules.basic.role")
       val username = Props.get("liftmodules.basic.username").openOr("")
       val password = Props.get("liftmodules.basic.password").openOr("")
+
+      val excludedPaths = Props.get("liftmodules.basic.paths").foldLeft(Nil: List[String])((n, l) ⇒ l.split(",").toList ::: n)
 
       LiftRules.authentication = HttpBasicAuthentication(title) {
         case (username, password, _) ⇒ userRoles(AuthRole(role) :: Nil); true
       }
 
       LiftRules.httpAuthProtectedResource.prepend {
-        case Req(_, _, _) ⇒ Full(AuthRole(role))
+        case Req(path, _, _) if !excludedPaths.contains(path.head) ⇒ Full(AuthRole(role))
       }
 
     }

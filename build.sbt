@@ -1,6 +1,6 @@
 name := "basic-auth"
 
-version := "2.4-M4-1.1"
+version := "2.4-M4-1.2"
 
 organization := "net.liftmodules"
 

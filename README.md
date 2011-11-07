@@ -31,6 +31,8 @@ If you want all run modes to have authentication put them in default.props
          liftmodules.basic.title=Protected Site
          liftmodules.basic.username=hello
          liftmodules.basic.password=hello
+   
 
-
+If there are paths you wish to exclude from authentication use the 
+`liftmodules.basic.paths` property. This is a comma separated list of paths. We only match on the first part of the context path, e.g `liftmodules.basic.paths=moose` will give unauthorized access to any URL with the context path starting with moose e.g. http://localhost:8080/moose/id/123
   
