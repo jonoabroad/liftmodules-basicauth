@@ -12,6 +12,9 @@ jettyScanDirs := Nil
 
 resolvers += "Java.net Maven2 Repository" at "http://download.java.net/maven/2/"
 
+externalResolvers := List(DefaultMavenRepository,
+	"sonatype.repo" at "https://oss.sonatype.org/​content/repositories/public/")
+
 libraryDependencies ++= {
   val liftVersion = "2.4" 
   Seq(
