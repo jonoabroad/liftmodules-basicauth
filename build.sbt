@@ -1,4 +1,4 @@
-//uses sbt 0.10.0
+//uses sbt 0.11.2
 name := "basic-auth"
 
 version := "2.4-1.2"
@@ -7,13 +7,7 @@ organization := "net.liftmodules"
 
 scalaVersion := "2.9.1"
  
-// If using JRebel
-jettyScanDirs := Nil
-
 resolvers += "Java.net Maven2 Repository" at "http://download.java.net/maven/2/"
-
-externalResolvers := List(DefaultMavenRepository,
-	"sonatype.repo" at "https://oss.sonatype.org/​content/repositories/public/")
 
 libraryDependencies ++= {
   val liftVersion = "2.4" 
@@ -32,3 +26,7 @@ libraryDependencies ++= Seq(
 publishTo := Some("liftmodules repository" at "https://repository-liftmodules.forge.cloudbees.com/release/")
  
 credentials += Credentials( file("/private/liftmodules/cloudbees.credentials") )
+
+EclipseKeys.withSource := true
+
+EclipseKeys.createSrc := EclipseCreateSrc.Default + EclipseCreateSrc.Resource
