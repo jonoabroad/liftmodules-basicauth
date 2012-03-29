@@ -27,6 +27,6 @@ publishTo := Some("liftmodules repository" at "https://repository-liftmodules.fo
  
 credentials += Credentials( file("/private/liftmodules/cloudbees.credentials") )
 
-EclipseKeys.withSource := true
+//EclipseKeys.withSource := true
 
-EclipseKeys.createSrc := EclipseCreateSrc.Default + EclipseCreateSrc.Resource
+//EclipseKeys.createSrc := EclipseCreateSrc.Default + EclipseCreateSrc.Resource
