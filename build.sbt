@@ -1,16 +1,18 @@
 //uses sbt 0.11.2
 name := "basic-auth"
 
-version := "2.4-1.2"
+version := "2.5-SNAPSHOT-1.2"
 
 organization := "net.liftmodules"
 
-scalaVersion := "2.9.1"
+scalaVersion := "2.9.2"
  
 resolvers += "Java.net Maven2 Repository" at "http://download.java.net/maven/2/"
 
+resolvers += "snapshots" at "https://oss.sonatype.org/content/repositories/snapshots/"
+
 libraryDependencies ++= {
-  val liftVersion = "2.4" 
+  val liftVersion = "2.5-SNAPSHOT" 
   Seq(
     "net.liftweb" %% "lift-webkit" % liftVersion % "compile->default")
 }
