@@ -1,4 +1,4 @@
-//uses sbt 0.11.2
+//uses sbt 0.11.3
 name := "basic-auth"
 
 version := "2.5-SNAPSHOT-1.2"

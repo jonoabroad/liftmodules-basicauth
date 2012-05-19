@@ -40,7 +40,7 @@ package lib {
       val excludedPaths = Props.get("liftmodules.basic.paths").foldLeft(Nil: List[String])((n, l) ⇒ l.split(",").toList ::: n)
 
       LiftRules.authentication = HttpBasicAuthentication(title) {
-        case (username, password, _) ⇒ userRoles(AuthRole(role) :: Nil); true
+        case (`username`, `password`, _) ⇒ userRoles(AuthRole(role) :: Nil); true
       }
 
       LiftRules.httpAuthProtectedResource.prepend {
