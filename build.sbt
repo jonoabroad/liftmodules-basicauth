@@ -1,11 +1,11 @@
 //uses sbt 0.11.3
 name := "basic-auth"
 
-version := "2.5-SNAPSHOT-1.2"
+version := "2.4-1.3"
 
 organization := "net.liftmodules"
 
-scalaVersion := "2.9.2"
+scalaVersion := "2.9.1"
  
 resolvers += "Java.net Maven2 Repository" at "http://download.java.net/maven/2/"
 
